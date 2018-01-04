@@ -1,0 +1,17 @@
+#Default lookup dictionary
+
+sqlite:
+  prefix: /usr/local/bin/
+  tmpdir: /tmp/sqlite_tmp
+  command: /sqlite
+  uri: https://www.sqlite.org/2017/
+  home: /opt
+  edition: tools-linux
+  arch: x86
+  version: 3210000
+  archive_type: zip
+  opts: -s -L
+  suffix: zip
+  hashsum: 9bed2c328ba10219a18578d8909e64c5c4701cb8
+  interval: 15
+  retries: 1
