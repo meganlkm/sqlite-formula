@@ -5,7 +5,7 @@ Formulas to set up sqlite3 on both Linux and Windows systems.
 **Note**
 
     See the full Salt Formulas installation and usage instructions
-    [http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html].
+    <http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html>.
 
 `make` is on your system and available. If it is not or you are not sure what
 `make` is, [this](https://www.gnu.org/software/make/) is a good place to start.
