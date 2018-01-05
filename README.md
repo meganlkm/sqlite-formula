@@ -3,9 +3,10 @@
 Formulas to set up sqlite3 on both Linux and Windows systems.
 
 **Note:**
+See the full Salt Formulas installation and usage instructions
+<http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html>.
 
-See the full Salt Formulas installation and usage instructions <http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html>.
-
+**Assumptions:**
 `make` is on your system and available. If it is not or you are not sure what
 `make` is, [this](https://www.gnu.org/software/make/) is a good place to start.
 
@@ -30,23 +31,35 @@ Install sqlite3 from the source or a pre-compiled binary in the case of windows.
 
 Creates a named table using a sql statement.
 
-### `required variables`
+#### `required variables`
 
 * sqlite.table_name
+    ```bash
+    users
+    ```
+* sqlite.db_location
+    ```bash
+    /var/www/data/app.sqlite
+    ```
 * sqlite.sql_statement
-
-### `example of sqlite.sql_statement`
-```sql
-CREATE TABLE `users` (`username` TEXT COLLATE NOCASE UNIQUE NOT NULL, `password` BLOB NOT NULL, `salt` BLOB NOT NULL, `last_login` INT)
-```
+    ```sql
+    CREATE TABLE `users` (`username` TEXT COLLATE NOCASE UNIQUE NOT NULL, `password` BLOB NOT NULL, `salt` BLOB NOT NULL, `last_login` INT)
+    ```
 
 ## `sqlite.delete_table`
 
 Deletes a named table.
 
-### `required variables`
+#### `required variables`
 
 * sqlite.table_name
+    ```bash
+    users
+    ```
+* sqlite.db_location
+    ```bash
+    /var/www/data/app.sqlite
+    ```
 
 # Pillar customizations
 
