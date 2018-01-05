@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+# vim: ft=jinja
+
+# Start with defaults from defs.yaml
+{% import_yaml 'sqlite/defaults.yaml' as defs %}
+
+# Set OS deviations from defaults
+{% set osmap = salt['grains.filter_by']({
+
+        'Windows':{ 'prefix'   : 'C:\\Program files',
+                    'tmpdir'   : 'C:\\temp\\sqlite_tmp',
+                    'os'       : 'win32',
+                    'archive_name' : 'sqlite-tools-win32-x86-3210000.zip',
+                    'archive_type' : 'zip',
+                    'hashsum'  : 'sha1=35088461a925347aea7eed51aa3b9e501cf03625',
+        },
+}, merge=defs, base="sqlite") %}
+
+# Merge osmap onto default settings before merging pillars.
+{% do defs.sqlite.update(osmap) %}
+{% set sqlite = salt['pillar.get']( 'sqlite', default=defs.sqlite, merge=True) %}
+
+# Set release details
+{% set url  = sqlite.get('sqlite:uri', '{0}/{1}'.format(sqlite.uri, sqlite.archive_name)) %}
+
+{% do sqlite.update({ 'src_url': url }) %}

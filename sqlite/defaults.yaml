@@ -1,0 +1,13 @@
+#Default lookup dictionary
+
+sqlite:
+  prefix: /usr/local
+  tmpdir: /tmp/sqlite_tmp
+  os: Linux
+  uri: https://www.sqlite.org/2017
+  archive_name: sqlite-autoconf-3210000.tar.gz
+  archive_type: tar
+  opts: -s -L
+  hashsum: sha1=f56fe3407d8297fc0a68a058f4c9e6b77e83575c
+  interval: 15
+  retries: 1
