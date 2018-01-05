@@ -19,7 +19,7 @@ endef
 export DOCKER_BODY
 .PHONY: default
 test testv:
-	echo 'FROM simplyadrian/allsalt:debian_jessie > tests/Dockerfile
+	echo 'FROM simplyadrian/allsalt:debian_jessie' > tests/Dockerfile
 	echo "$$DOCKER_BODY" >> tests/Dockerfile
 	docker build --build-arg TEST_LABEL="${MY_DIR}" \
 	  --build-arg TEST_LABEL_KEY=${TEST_LABEL_KEY} \

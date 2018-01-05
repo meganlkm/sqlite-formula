@@ -9,25 +9,18 @@
 
         'Windows':{ 'prefix'   : 'C:\\Program files',
                     'tmpdir'   : 'C:\\temp\\sqlite_tmp',
-                    'edition'  : 'dll-win64',
-                    'arch'     : 'x64',
-                    'hashsum'  : 'a0ee0843315ad667b05538678c6cd31564e71f4c',
+                    'os'       : 'win32',
+                    'archive_name' : 'sqlite-tools-win32-x86-3210000.zip',
+                    'archive_type' : 'zip',
+                    'hashsum'  : 'sha1=35088461a925347aea7eed51aa3b9e501cf03625',
         },
-  },
-}, merge=defs, base="sqlite")) %}
+}, merge=defs, base="sqlite") %}
 
 # Merge osmap onto default settings before merging pillars.
 {% do defs.sqlite.update(osmap) %}
 {% set sqlite = salt['pillar.get']( 'sqlite', default=defs.sqlite, merge=True) %}
 
-# Set directory details
-{%- set _realhome = '{0}/sqlite-{1}-{2}-{3}'.format( sqlite.prefix, sqlite.edition, sqlite.arch, sqlite.version) %}
-
 # Set release details
-{% set f = 'sqlite-{0}-{1}-{2}.{3}'.format(sqlite.edition, sqlite.arch, sqlite.version, sqlite.dl.suffix) %}
-{% set url  = sqlite.get('sqlite:uri', '{0}'.format(sqlite.uri)) ~ f %}
+{% set url  = sqlite.get('sqlite:uri', '{0}/{1}'.format(sqlite.uri, sqlite.archive_name)) %}
 
-{% do sqlite.update({ 'realhome'    : _realhome,
-                      'archive_name': f,
-                      'src_url'     : url
-%}
+{% do sqlite.update({ 'src_url': url }) %}
