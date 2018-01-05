@@ -1,3 +1,3 @@
-{{ sqlite.table_name }}:
+'{{ sqlite.table_name }}':
   sqlite3.table_absent:
-    - db: {{ sqlite.db.location }}
+    - db: '{{ sqlite.db_location }}'
