@@ -67,17 +67,4 @@ Any of these values can be overwritten in a pillar file but most of the Windows
 deviations are handled in the map.jinja file. If you do find yourself needing
 more overrides follow the example below.
 
-```yaml
-     sqlite:
-       lookup:
-         prefix: /usr/local
-         tmpdir: /tmp/sqlite_tmp
-         os: Linux
-         uri: https://www.sqlite.org/2017
-         archive_name: sqlite-autoconf-3210000.tar.gz
-         archive_type: tar
-         opts: -s -L
-         hashsum: sha1=f56fe3407d8297fc0a68a058f4c9e6b77e83575c
-         interval: 15
-         retries: 1
-```
+[pillar.exampl](sqlite/tests/pillar/sqlite/init.sls)
