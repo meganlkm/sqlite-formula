@@ -14,7 +14,7 @@ ADD tests/ /srv/salt
 ADD . /srv/salt/$$TEST_LABEL
 WORKDIR /srv/salt
 RUN sed -i "s/#master: salt/master: localhost/g" /etc/salt/minion &&\
-   salt-call --local state.apply
+   salt-call --local -l debug state.apply
 endef
 export DOCKER_BODY
 .PHONY: default

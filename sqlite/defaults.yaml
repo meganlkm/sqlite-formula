@@ -11,3 +11,8 @@ sqlite:
   hashsum: sha1=f56fe3407d8297fc0a68a058f4c9e6b77e83575c
   interval: 15
   retries: 1
+  create_mode: False
+  delete_mode: False
+  table_name: ''
+  db_location: ''
+  sql_statement: ''
