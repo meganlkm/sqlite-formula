@@ -1,0 +1,23 @@
+Windows:
+  prefix: 'C:\\Program files'
+  tmpdir: 'C:\\temp\\sqlite_tmp'
+  os: win32
+  archive_name: sqlite-tools-win32-x86-3210000.zip
+  archive_type: zip
+  hashsum: sha1=35088461a925347aea7eed51aa3b9e501cf03625
+
+Debian:
+  prefix: /usr/local
+  tmpdir: /tmp/sqlite_tmp
+  os: Linux
+  archive_name: sqlite-autoconf-3210000.tar.gz
+  archive_type: tar
+  hashsum: sha1=f56fe3407d8297fc0a68a058f4c9e6b77e83575c
+
+RedHat:
+  prefix: /usr/local
+  tmpdir: /tmp/sqlite_tmp
+  os: Linux
+  archive_name: sqlite-autoconf-3210000.tar.gz
+  archive_type: tar
+  hashsum: sha1=f56fe3407d8297fc0a68a058f4c9e6b77e83575c
