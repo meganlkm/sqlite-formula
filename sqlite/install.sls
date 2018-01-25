@@ -69,7 +69,7 @@ sqlite-package-install:
     - name: gcc
   cmd.run:
     - name: |
-        cd '{{ sqlite.tmpdir }}'/'{{ sqlite.archive_name | regex_replace('.tar.gz$','') }}'
+        cd '{{ sqlite.tmpdir }}'/'{{ sqlite.archive_name | replace('.tar.gz','') }}'
         ./configure --prefix='{{ sqlite.prefix }}'
         make
         make install
