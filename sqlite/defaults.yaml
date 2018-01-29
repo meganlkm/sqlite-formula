@@ -1,6 +1,8 @@
 #Default lookup dictionary
 
 sqlite:
+  pkg: True
+  src: False
   uri: https://www.sqlite.org/2017
   opts: -s -L
   interval: 15

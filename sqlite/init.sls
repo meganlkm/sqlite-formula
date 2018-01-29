@@ -1,7 +1,10 @@
 {% from "sqlite/map.jinja" import sqlite with context %}
 
 include:
-  - sqlite/install
+  - sqlite/pkg
+{% if sqlite.src or grains.os == 'Windows' %}
+  - sqlite/src
+{% endif %}
 {% if sqlite.create_mode %}
   - sqlite/create_table
 {% endif %}
