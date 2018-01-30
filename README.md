@@ -10,7 +10,7 @@ See the full Salt Formulas installation and usage instructions
 `make` is on your system and available. If it is not or you are not sure what
 `make` is, [this](https://www.gnu.org/software/make/) is a good place to start.
 
-# Testing
+## Testing
 
 Change to `state` file location in checked out repository.
 
@@ -21,50 +21,49 @@ This is where the ***Makefile*** is located.
 - run: `bash make`
 - test results will return to your screen.
 
-# Available states
+## Available states
 
-## `sqlite`
+### `sqlite`
 
 Install sqlite3 from the source or a pre-compiled binary in the case of windows.
 
-## `sqlite.create_table`
+### `sqlite.create_table`
 
 Creates a named table using a sql statement.
 
 #### `required variables`
 
-* sqlite.table_name
-    ```bash
-    users
-    ```
-* sqlite.db_location
-    ```bash
-    /var/www/data/app.sqlite
-    ```
-* sqlite.sql_statement
-    ```sql
-    CREATE TABLE `users` (`username` TEXT COLLATE NOCASE UNIQUE NOT NULL, `password` BLOB NOT NULL, `salt` BLOB NOT NULL, `last_login` INT)
-    ```
+````
+sqlite.table_name: string
+    example: users
+sqlite.db_location: string
+    example: /var/www/data
+sqlite.db_file: string
+    example: app.sqlite
+sqlite.sql_statement: string
+    example:
+      CREATE TABLE `users` (`username` TEXT COLLATE NOCASE UNIQUE NOT NULL, `password` BLOB NOT NULL, `salt` BLOB NOT NULL, `last_login` INT)
+````
 
-## `sqlite.delete_table`
+### `sqlite.delete_table`
 
 Deletes a named table.
 
 #### `required variables`
 
-* sqlite.table_name
-    ```bash
-    users
-    ```
-* sqlite.db_location
-    ```bash
-    /var/www/data/app.sqlite
-    ```
+````
+sqlite.table_name: string
+    example: users
+sqlite.db_location: string
+    example: /var/www/data
+sqlite.db_file: string
+    example: app.sqlite
+````
 
-# Pillar customizations
+## Pillar customizations
 
 Any of these values can be overwritten in a pillar file but most of the Windows
 deviations are handled in the map.jinja file. If you do find yourself needing
 more overrides follow the example below.
 
-[pillar.exampl](sqlite/tests/pillar/sqlite/init.sls)
+[pillar.example](sqlite/tests/pillar/sqlite/init.sls)
