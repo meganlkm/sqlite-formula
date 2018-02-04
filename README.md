@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/intuitivetechnologygroup/sqlite-formula.svg?branch=master)](https://travis-ci.org/intuitivetechnologygroup/sqlite-formula)
+
 # Sqlite
 
 Formulas to set up sqlite3 on both Linux and Windows systems.
