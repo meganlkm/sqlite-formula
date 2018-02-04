@@ -7,7 +7,7 @@ notifications:
     on_success: never
     on_failure: always
   slack:
-    room:
+    rooms:
       - secure: euZjnz+JCrUCe34wxgLy1AATLyNRq6v/AQOI8n2yaTR2b6BCQkoi9Mh9R3o9If3hJrzZuv6EYaq7ilLAI34uPoSzXLmAgbLt1fXGVU2cJ2BY8ZgmqlawPwGfOm61iFRF8RQp4P3lzw242Em83AuRO6kM8FjFQo68GZHb4fU1BdgzyyqCQ19aL6Mb/5VxkZe1PCzXOciP7hB4OIXt5e51bE1gtBIUimji0Pz/IPnq5U29KAZPUKHanhYRCd0Kbx5ix+xOSaW+LUfcaP7uUb5oouyRWvllsUgXaK3N0CPq6u4/ryIsU0HOHuHGujjqWFrHrmfPwDsT5J3VVbSpiDo4DUlrmxH/RvThZXAegZZJKxXy/vqXBV+sO5ZArhhqwtMixB0mFytK1HBbPuotKwaeIO4Lq29Ow99Md/Nm8IY+oyeRgaHE/pk7Af6diAZ9HMlYLXa+qPTFhLkRnCl+UmxI3K6TGBE4DgJlYcI6NpNRU9k6tgyNuThBnx89zZ4uSl5eT4y9Nlzaf/Is2qClt3xKTthPTeHFf5CWHkZDzHzOXHzCly36QzRRGJwfoXdFVOqbR7rdwZ+RZn8aSU5NFv1fBSj6q0Lsot3pdWAColYgyZnprd7n2FJ4euw0ewal5Z56vPhjjp/cYLxu61zibjTCmE8EPAcfhg5u+Kmn2i0XfCc=
     on_success: always
 sudo: required
